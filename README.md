@@ -12,4 +12,26 @@
 
 - create Header.jsx and use Lottie.app for Animations: search and download animation, store in .json, npm install lottie-react, import animation and Lottie package
 - create SignIn SignUp form
-- Validate form data using useRef()
+- Validate form data using useRef() and regex
+
+- FireBase Setup in incognito mode
+
+  - create project moviesVerse
+  - Add Firebase to your web app
+  - npm install firebase
+  - create firebase config in utils/firebase.jsx
+  - authentication : select method
+  - npm i -g firebase-tools
+  - firebase login
+  - firebase init
+  - npm run build & <firebase.js "public" : "dist"/>
+  - firebase deploy : deploy our app to production
+  - CheckIt: 👉: moviesverse-f6ebd.web.app
+
+- for authenticationMethods go on documentation(Web) and passwordAuthentication ->
+  - createUserWithEmailAndPassword, signInWithEmailAndPassword
+- redux setup
+
+# -----------------------------------------
+
+useRef() is used to store input value without re-rendering the component.

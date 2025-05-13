@@ -2,6 +2,11 @@ import React, { useRef, useState } from "react";
 import Header from "./Header";
 import { BG_URL } from "../utils/constant";
 import { checkValidate } from "../utils/validate";
+import { auth } from "../utils/firebase.jsx";
+import {
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+} from "firebase/auth";
 
 const Login = () => {
   const [isSignIn, setisSignIn] = useState(true);
@@ -16,12 +21,53 @@ const Login = () => {
   };
 
   const handleButtonClick = () => {
+    // check Validation
     const message = checkValidate(
       name?.current?.value,
       email?.current?.value,
       password?.current?.value
     );
+
     setErrorMessage(message);
+
+    if (message) return;
+
+    if (!isSignIn) {
+      // SignUp form-logic
+      createUserWithEmailAndPassword(
+        auth,
+        email?.current?.value,
+        password?.current?.value
+      )
+        .then((userCredential) => {
+          // Signed up
+          const user = userCredential.user;
+          console.log(user);
+        })
+        .catch((error) => {
+          const errorCode = error.code;
+          const errorMessage = error.message;
+          setErrorMessage(errorCode + " " + errorMessage);
+        });
+    } else {
+      //SignIn Form-logic
+      signInWithEmailAndPassword(
+        auth,
+        email?.current?.value,
+        password?.current?.value
+      )
+        .then((userCredential) => {
+          // Signed in
+          const user = userCredential.user;
+          console.log(user);
+          // ...
+        })
+        .catch((error) => {
+          const errorCode = error.code;
+          const errorMessage = error.message;
+          setErrorMessage(errorCode + " " + errorMessage);
+        });
+    }
   };
 
   return (
