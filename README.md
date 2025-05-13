@@ -12,3 +12,4 @@
 
 - create Header.jsx and use Lottie.app for Animations: search and download animation, store in .json, npm install lottie-react, import animation and Lottie package
 - create SignIn SignUp form
+- Validate form data using useRef()
