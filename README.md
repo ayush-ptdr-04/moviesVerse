@@ -15,7 +15,6 @@
 - Validate form data using useRef() and regex
 
 - FireBase Setup in incognito mode
-
   - create project moviesVerse
   - Add Firebase to your web app
   - npm install firebase
@@ -27,10 +26,15 @@
   - npm run build & <firebase.js "public" : "dist"/>
   - firebase deploy : deploy our app to production
   - CheckIt: 👉: moviesverse-f6ebd.web.app
-
+  ***
 - for authenticationMethods go on documentation(Web) and passwordAuthentication ->
-  - createUserWithEmailAndPassword, signInWithEmailAndPassword
-- redux setup
+- createUserWithEmailAndPassword, signInWithEmailAndPassword
+
+- ## redux setup
+  - npm install @reduxjs/toolkit
+  - npm install react-redux
+    - create appStore.js
+    - create userSlice.js
 
 # -----------------------------------------
 
