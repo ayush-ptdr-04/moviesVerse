@@ -31,10 +31,21 @@
 - createUserWithEmailAndPassword, signInWithEmailAndPassword
 
 - ## redux setup
+
   - npm install @reduxjs/toolkit
   - npm install react-redux
     - create appStore.js
     - create userSlice.js
+
+- onAuthStateChanged API use on the root component
+  - dispatch action addUser and removeUser to userSlice
+  - use useNavigate() for SignIn,SignOut(in child component) because routerProvider on the root level
+
+# Browse Page
+
+- add Header and SignOut API and navigate to browse or login page
+- use updateUserProfile API,
+-
 
 # -----------------------------------------
 
